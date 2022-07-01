@@ -4,14 +4,15 @@ const DriverDetails = ({ driver }) => {
     return (
         <div>
             {/* <h3>{index + 1}</h3> */}
-            {driver.driverId}
-            {driver.code}
-            {driver.dateOfBirth}
-            {driver.familyName}
-            {driver.givenName}
-            {driver.nationality}
-            {driver.permanentNumber}
-            {driver.url}
+            <p>Name: {driver.givenName} {driver.familyName}</p>
+            <p>DOB: {driver.dateOfBirth}</p>
+            <p>Nationality: {driver.nationality}</p>
+            <p>Perm Numuber: {driver.permanentNumber}</p>
+            <a href={driver.url}>Wiki</a>
+
+
+
+
         </div>
 
     )
