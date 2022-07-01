@@ -2,8 +2,8 @@ import React from "react";
 import DriverDetails from "./DriverDetails";
 
 const DriverList = ({ drivers }) => {
-    const driverInfo = drivers.map((driver, index) => {
-        return <DriverList driver={driver} index={index} />
+    const driverInfo = drivers.map((driver) => {
+        return <DriverDetails driver={driver} />
     })
 
 
@@ -11,6 +11,7 @@ const DriverList = ({ drivers }) => {
 
         <div>
             <ul>
+                <h2>Driver List 2022 Season</h2>
                 {driverInfo}
             </ul>
         </div>

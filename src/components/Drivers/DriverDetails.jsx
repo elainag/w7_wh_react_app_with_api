@@ -1,11 +1,15 @@
 import React from "react";
 
-const DriverDetails = ({ driver, index }) => {
-    const details = driver.code
+const DriverDetails = ({ driver }) => {
+    // const details = driver
     return (
         <div>
-            <h3>{index + 1}</h3>
-            <p>{driver.code}</p>
+            {/* <h3>{index + 1}</h3> */}
+            <p>{driver.driverid}</p>
+            <p>{driver.driverid}</p>
+            <p>{driver.driverid}</p>
+            <p>{driver.driverid}</p>
+            <p>{driver.driverid}</p>
         </div>
 
     )

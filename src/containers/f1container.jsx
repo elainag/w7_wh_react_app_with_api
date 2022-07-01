@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import DriversList from '../components/Drivers/DriverList'
-import DriverDetails from "../components/Drivers/DriverDetails";
+import DriverList from '../components/Drivers/DriverList'
 
 function F1Container() {
 
-    const [drivers, setDriver] = useState([]);
+    const [drivers, setDrivers] = useState([]);
     // const [constructor, setContrustor] = useState([]);
 
     async function getDrivers() {
@@ -12,7 +11,7 @@ function F1Container() {
         const response = await fetch(url)
         // console.log(response)
         const data = await response.json()
-        setDriver(data.MRData.DriverTable.Drivers)
+        setDrivers(data.MRData.DriverTable.Drivers)
     }
 
     useEffect(() => {
@@ -20,11 +19,10 @@ function F1Container() {
     }, []);
 
     return (
-        <>
+        <div>
             <h1>Container</h1>
-            <DriversList drivers={drivers} />
-            <DriverDetails />
-        </>
+            <li><DriverList drivers={drivers} /></li>
+        </div>
 
     )
 }
