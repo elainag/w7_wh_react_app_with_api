@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from "react";
-import DriverDetails from "../components/Drivers/DriverDetails";
 import DriversList from '../components/Drivers/DriverList'
+import DriverDetails from "../components/Drivers/DriverDetails";
 
 function F1Container() {
 
-    const [driver, setDriver] = useState([]);
+    const [drivers, setDriver] = useState([]);
     // const [constructor, setContrustor] = useState([]);
 
     async function getDrivers() {
         const url = `https://ergast.com/api/f1/2022/drivers.json`;
         const response = await fetch(url)
-        console.log(response)
+        // console.log(response)
         const data = await response.json()
-        setDriver(data)
+        setDriver(data.MRData.DriverTable.Drivers)
     }
-
-    // const getDrivers = function(){
-    //     fetch("http://ergast.com/api/f1/2022/drivers.json")
-    //     .then(result => result.json())
-    //     .then(drivers => setDriver)
-    // }
 
     useEffect(() => {
         getDrivers();
@@ -28,7 +22,7 @@ function F1Container() {
     return (
         <>
             <h1>Container</h1>
-            <DriversList />
+            <DriversList drivers={drivers} />
             <DriverDetails />
         </>
 

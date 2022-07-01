@@ -1,11 +1,15 @@
 import React from "react";
 
-function DriverDetails() {
-
+const DriverDetails = ({ driver, index }) => {
+    const details = driver.code
     return (
-        <h1>DriverDetails</h1>
+        <div>
+            <h3>{index + 1}</h3>
+            <p>{driver.code}</p>
+        </div>
 
     )
+
 }
 
 export default DriverDetails;
