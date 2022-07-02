@@ -4,7 +4,7 @@ import ConstructorsList from "../components/Constructors/ConstructorsList";
 import CircuitsList from "../components/Circuits/CircuitsList";
 import DriverDetails from "../components/Drivers/DriverDetails";
 import DriverSelector from "../components/Drivers/DriverSelector";
-import DriverOptions from "../components/Drivers/DriverOptions";
+import SelectDriverDetail from "../components/Drivers/SelectedDriverDetail";
 
 function F1Container() {
 
@@ -59,7 +59,7 @@ function F1Container() {
         <div>
             <h1>Container</h1>
             <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
-            {selectedDriver ? <DriverDetails selectedDriver={selectedDriver} /> : null}
+            {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
             <li><DriverList drivers={drivers} /></li>
             <li><ConstructorsList constructors={constructors} /></li>
             <li><CircuitsList circuits={circuits} /></li>

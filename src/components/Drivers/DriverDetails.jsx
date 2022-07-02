@@ -11,9 +11,8 @@ const DriverDetails = ({ driver }) => {
             <a href={driver.url}>Wiki</a>
             {/* <iframe src={driver.url} width="540" height="450"></iframe> */}
         </div>
-
     )
 
 }
-
 export default DriverDetails;
+
