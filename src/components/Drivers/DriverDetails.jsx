@@ -10,10 +10,6 @@ const DriverDetails = ({ driver }) => {
             <p>Perm Numuber: {driver.permanentNumber}</p>
             <a href={driver.url}>Wiki</a>
             {/* <iframe src={driver.url} width="540" height="450"></iframe> */}
-
-
-
-
         </div>
 
     )
