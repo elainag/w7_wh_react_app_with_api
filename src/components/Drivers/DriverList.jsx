@@ -11,7 +11,7 @@ const DriverList = ({ drivers }) => {
 
         <div>
             <ul>
-                <h2>Driver List 2022 Season</h2>
+                <h2>Drivers 2022 Season</h2>
                 {driverInfo}
             </ul>
         </div>

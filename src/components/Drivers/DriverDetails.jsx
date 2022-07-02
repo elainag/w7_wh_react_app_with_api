@@ -9,6 +9,7 @@ const DriverDetails = ({ driver }) => {
             <p>Nationality: {driver.nationality}</p>
             <p>Perm Numuber: {driver.permanentNumber}</p>
             <a href={driver.url}>Wiki</a>
+            {/* <iframe src={driver.url} width="540" height="450"></iframe> */}
 
 
 
