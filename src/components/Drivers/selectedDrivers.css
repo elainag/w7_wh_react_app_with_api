@@ -1,0 +1,20 @@
+.container-details p {
+    display: grid;
+    align-items: center;
+    height: 1rem;
+    padding: 1rem;
+    border: outset;
+    background-color: red;
+    color: white;
+    column-gap: normal;
+    width: 10rem;
+}
+
+div p {
+    color: red;
+}
+
+#drop-down * {
+    border-radius: 15px;
+    background-color: red;
+}

@@ -5,12 +5,17 @@ import CircuitsList from "../components/Circuits/CircuitsList";
 import DriverDetails from "../components/Drivers/DriverDetails";
 import DriverSelector from "../components/Drivers/DriverSelector";
 import SelectDriverDetail from "../components/Drivers/SelectedDriverDetail";
+import ConstructorSelector from "../components/Constructors/ConstructorSelector";
+import SelectConstructorDetail from "../components/Constructors/SelectedConstructorDetails";
+
+
 
 function F1Container() {
 
     const [drivers, setDrivers] = useState([]);
     const [selectedDriver, setSelectedDriver] = useState(null);
     const [constructors, setConstructors] = useState([]);
+    const [selectedConstructor, setSelectedConstructor] = useState([]);
     const [circuits, setCircuits] = useState([])
 
     async function getDrivers() {
@@ -55,15 +60,38 @@ function F1Container() {
         setSelectedDriver(driver);
     }
 
+    const onConstructorSelected = function (constructor) {
+        setSelectedConstructor(constructor);
+    }
+
     return (
-        <div>
-            <h1>Container</h1>
-            <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
-            {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
-            <li><DriverList drivers={drivers} /></li>
-            <li><ConstructorsList constructors={constructors} /></li>
-            <li><CircuitsList circuits={circuits} /></li>
-        </div>
+        <body>
+            <h1>F1 Season Insights 2022</h1>
+            <main>
+                <section>
+                    <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
+                    {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
+                </section>
+                <section>
+                    <ConstructorSelector constructors={constructors} onConstructorSelected={onConstructorSelected} />
+                    {selectedConstructor ? <SelectConstructorDetail selectedConstructor={selectedConstructor} /> : null}
+                </section>
+
+                <section>
+                    <DriverList drivers={drivers} />
+                </section>
+
+                <section>
+                    <ConstructorsList constructors={constructors} />
+                </section>
+
+                <section>
+                    <li><CircuitsList circuits={circuits} /></li>
+
+                </section>
+
+            </main >
+        </body>
 
     )
 }

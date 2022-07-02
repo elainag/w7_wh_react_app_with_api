@@ -15,7 +15,7 @@ const DriverSelector = ({ drivers, onDriverSelected }) => {
     return (
         <select defaultValue="" onChange={handleChange}>
 
-            <option value="" >Choose Driver</option>
+            <option id="drop-down" value="" >Choose Driver</option>
             {driverOptions}
         </select>
     )

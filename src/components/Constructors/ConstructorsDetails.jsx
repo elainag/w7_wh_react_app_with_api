@@ -1,11 +1,10 @@
 import React from "react";
+import "./constructors.css"
 
 const ConstructorsDetails = ({ constructor }) => {
     return (
         <div>
-            <p>Name: {constructor.name}</p>
-            <p>Nationality: {constructor.nationality}</p>
-            <a href={constructor.url}>Wiki</a>
+            <p className="container"> {constructor.name}</p>
         </div>
     )
 }

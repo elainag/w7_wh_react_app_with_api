@@ -1,5 +1,6 @@
 import React from "react";
 import DriverDetails from "./DriverDetails";
+import "./drivers.css"
 
 const DriverList = ({ drivers }) => {
     const driverInfo = drivers.map((driver) => {
@@ -9,12 +10,12 @@ const DriverList = ({ drivers }) => {
 
     return (
 
-        <div>
+        <section>
             <ul>
-                <h2>Drivers 2022 Season</h2>
+                <h2>Drivers</h2>
                 {driverInfo}
             </ul>
-        </div>
+        </section>
 
     )
 }
