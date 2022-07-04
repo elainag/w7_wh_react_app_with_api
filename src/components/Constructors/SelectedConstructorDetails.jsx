@@ -3,9 +3,9 @@ import React from "react";
 const SelectConstructorDetail = ({ selectedConstructor }) => {
     return (
         <div>
-            <p>Name: {selectedConstructor.name}</p>
-            <p>Nationality: {selectedConstructor.nationality}</p>
-            <a href={selectedConstructor.url}>Wiki</a>
+            <p> {selectedConstructor.name}</p>
+            <p>{selectedConstructor.nationality}</p>
+            <a href={selectedConstructor.url}></a>
         </div>
     )
 }

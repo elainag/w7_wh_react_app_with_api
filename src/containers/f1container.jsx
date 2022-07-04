@@ -71,17 +71,18 @@ function F1Container() {
                 <section>
                     <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
                     {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
-                </section>
-                <section>
+
                     <ConstructorSelector constructors={constructors} onConstructorSelected={onConstructorSelected} />
                     {selectedConstructor ? <SelectConstructorDetail selectedConstructor={selectedConstructor} /> : null}
                 </section>
 
                 <section>
-                    <DriverList drivers={drivers} />
-                </section>
+                    <div >
+                        <ul className="flexbox">
+                            <DriverList drivers={drivers} />
+                        </ul>
+                    </div>
 
-                <section>
                     <ConstructorsList constructors={constructors} />
                 </section>
 

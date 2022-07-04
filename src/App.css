@@ -11,3 +11,40 @@ body {
 h1 {
   font-size: 4rem;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 12% 12% 12% 12 12% 12% 12%;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-areas:
+    'p1 p2 p3 p4 p5 p6 p7'
+    'p8 p9 p10 p11 p12 p13 p14'
+    'p15 p16 p17 p18 p19 p20 p21';
+}
+
+.container li {
+  display: flex;
+  flex-direction: ;
+  justify-content: center;
+  list-style: none;
+}
+
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+
+}
+
+.flex-items {
+  width: 12%;
+  padding: 15px;
+
+}
+
+
+nav li a:hover {
+  text-decoration: underline;
+}
