@@ -3,8 +3,8 @@ import ConstructorsDetails from "./ConstructorsDetails";
 
 
 const ConstructorsList = ({ constructors }) => {
-    const constructorInfo = constructors.map((constructor) => {
-        return <ConstructorsDetails constructor={constructor} />
+    const constructorInfo = constructors.map((constructor, index) => {
+        return <ConstructorsDetails constructor={constructor} key={index} value={constructor.constructorId} />
     })
 
     return (

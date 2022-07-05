@@ -41,9 +41,13 @@ h1 {
 .flex-items {
   width: 12%;
   padding: 15px;
-
 }
 
+.flex-item1 {
+  width: 12%;
+  padding: 15px;
+  order: 2;
+}
 
 nav li a:hover {
   text-decoration: underline;

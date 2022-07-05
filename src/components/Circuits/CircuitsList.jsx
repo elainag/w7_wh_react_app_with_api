@@ -2,8 +2,8 @@ import React from "react";
 import CircuitDetails from "./CircuitsDetails";
 
 const CircuitList = ({ circuits }) => {
-    const circuitInfo = circuits.map((circuit) => {
-        return <CircuitDetails circuit={circuit} />
+    const circuitInfo = circuits.map((circuit, index) => {
+        return <CircuitDetails key={index} value={circuit.circuitId} circuit={circuit} />
     })
 
 
