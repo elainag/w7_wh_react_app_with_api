@@ -68,7 +68,7 @@ function F1Container() {
 
     return (
         <body>
-            <h1>F1 Season Insights 2022</h1>
+            <h2>F1 Season Insights 2022</h2>
             <main>
                 <section>
                     <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
@@ -81,11 +81,6 @@ function F1Container() {
                 <div>
                     <DriverSearch drivers={drivers} search={search} />
                     <input placeholder="Search Driver" onChange={event => setSearch(event.target.value)} />
-
-
-
-
-
                 </div>
 
                 <section>
