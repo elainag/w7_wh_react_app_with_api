@@ -7,6 +7,7 @@ import DriverSelector from "../components/Drivers/DriverSelector";
 import SelectDriverDetail from "../components/Drivers/SelectedDriverDetail";
 import ConstructorSelector from "../components/Constructors/ConstructorSelector";
 import SelectConstructorDetail from "../components/Constructors/SelectedConstructorDetails";
+import DriverSearch from "../components/Drivers/DriverSearch";
 
 
 
@@ -14,6 +15,7 @@ function F1Container() {
 
     const [drivers, setDrivers] = useState([]);
     const [selectedDriver, setSelectedDriver] = useState(null);
+    const [search, setSearch] = useState("")
     const [constructors, setConstructors] = useState([]);
     const [selectedConstructor, setSelectedConstructor] = useState([]);
     const [circuits, setCircuits] = useState([])
@@ -76,11 +78,19 @@ function F1Container() {
                     {selectedConstructor ? <SelectConstructorDetail selectedConstructor={selectedConstructor} /> : null}
                 </section>
 
+                <div>
+                    <DriverSearch drivers={drivers} search={search} />
+                    <input placeholder="Search Driver" onChange={event => setSearch(event.target.value)} />
+
+
+
+
+
+                </div>
+
                 <section>
                     <div >
-                        <ul className="flexbox">
-                            <DriverList drivers={drivers} />
-                        </ul>
+                        <p> <DriverList drivers={drivers} /></p>
                     </div>
 
                     <ConstructorsList constructors={constructors} />

@@ -6,14 +6,12 @@ const DriverList = ({ drivers }) => {
         return <DriverDetails key={key} value={driver.driverId} driver={driver} />
     })
     return (
-        <>
+        <div>
             <h3>DriverList</h3>
-            <li >
-                <div className="flex-items">
-                    {driverInfo}
-                </div>
-            </li>
-        </>
+            <div>
+                {driverInfo}
+            </div>
+        </div>
 
     )
 }
