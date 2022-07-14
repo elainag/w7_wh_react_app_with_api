@@ -1,19 +1,28 @@
 import React from "react";
-import DriverDetails from "./DriverDetails";
+import SearchDriverDetail from "./SearchDriverDetail";
 
-const DriverSearch = ({ drivers, search }) => {
-    const driverInfo = drivers.filter((driver, key) => {
-        if (search === "") {
+
+const DriverSearch = ({ drivers, onSearchedDriver }) => {
+
+    const handleChange = function (e) {
+        const findDriver = drivers[e.target.value];
+        console.log(findDriver)
+        onSearchedDriver(findDriver);
+    }
+
+    const driverInfo = drivers.filter((driver) => {
+        if (onSearchedDriver === "") {
             return null
-        } else if (driver.familyName.toLowerCase().includes(search.toLowerCase())) {
-            return search;
+        } else if (driver.familyName.includes(onSearchedDriver)) {
+            return onSearchedDriver;
         }
-    }).map((driver, key) => {
-        return <DriverDetails key={key} value={driver.driverId} driver={driver} />
+    }).map((driver) => {
+        return <SearchDriverDetail key={driver.driverId} driver={driver} />
     })
 
     return (
         <div>
+            <input placeholder="Search Driver" onChange={handleChange} />
             {driverInfo}
         </div>
 

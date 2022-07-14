@@ -2,8 +2,8 @@ import React from "react";
 import DriverDetails from "./DriverDetails";
 
 const DriverList = ({ drivers }) => {
-    const driverInfo = drivers.map((driver, key) => {
-        return <DriverDetails key={key} value={driver.driverId} driver={driver} />
+    const driverInfo = drivers.map((driver) => {
+        return <DriverDetails key={driver.driverId} driver={driver} />
     })
     return (
         <div>
