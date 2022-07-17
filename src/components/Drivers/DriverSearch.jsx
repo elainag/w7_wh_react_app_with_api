@@ -1,5 +1,6 @@
 import React from "react";
 import SearchDriverDetail from "./SearchDriverDetail";
+import DriverDetails from "./DriverDetails";
 
 
 const DriverSearch = ({ drivers, onSearchedDriver }) => {
@@ -12,7 +13,7 @@ const DriverSearch = ({ drivers, onSearchedDriver }) => {
 
     const driverInfo = drivers.filter((driver) => {
         if (onSearchedDriver === "") {
-            return null
+            return <DriverDetail key={driver.driverId} driver={driver} />
         } else if (driver.familyName.includes(onSearchedDriver)) {
             return onSearchedDriver;
         }

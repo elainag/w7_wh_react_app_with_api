@@ -84,7 +84,7 @@ function F1Container() {
 
             <section>
                 <DriverSearch drivers={drivers} onSearchedDriver={onSearchedDriver} />
-                {searchedDriver ? <SearchDriverDetail searchedDriver={searchedDriver} /> : null}
+                {/* {searchedDriver ? <SearchDriverDetail searchedDriver={searchedDriver} /> : null} */}
             </section>
             <section>
                 <div >
