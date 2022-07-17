@@ -7,7 +7,7 @@ import DriverSelector from "../components/Drivers/DriverSelector";
 import SelectDriverDetail from "../components/Drivers/SelectedDriverDetail";
 import ConstructorSelector from "../components/Constructors/ConstructorSelector";
 import SelectConstructorDetail from "../components/Constructors/SelectedConstructorDetails";
-import DriverSearch from "../components/Drivers/DriverSearchold";
+import DriverSearch from "../components/Drivers/DriverSearch";
 
 
 
@@ -79,8 +79,8 @@ function F1Container() {
                 </section>
 
                 <div>
-                    <DriverSearch drivers={drivers} search={search} />
                     <input placeholder="Search Driver" onChange={event => setSearch(event.target.value)} />
+                    <DriverSearch drivers={drivers} search={search} />
 
 
 
@@ -90,7 +90,7 @@ function F1Container() {
 
                 <section>
                     <div >
-                        <p> <DriverList drivers={drivers} /></p>
+                        {/* <p> <DriverList drivers={drivers} /></p> */}
                     </div>
 
                     <ConstructorsList constructors={constructors} />

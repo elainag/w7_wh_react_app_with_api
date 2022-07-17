@@ -1,5 +1,6 @@
 import React from "react";
 import DriverDetails from "./DriverDetails";
+import SearchDriverDetail from "./SearchDriverDetail";
 
 const DriverSearch = ({ drivers, search }) => {
     const driverInfo = drivers.filter((driver, key) => {
@@ -10,6 +11,8 @@ const DriverSearch = ({ drivers, search }) => {
         }
     }).map((driver, key) => {
         return <DriverDetails key={key} value={driver.driverId} driver={driver} />
+        // the below code renders all the driver details in the search function
+        // return <SearchDriverDetail key={key} value={driver.driverId} driver={driver} />
     })
 
     return (
