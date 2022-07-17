@@ -8,6 +8,7 @@ import SelectDriverDetail from "../components/Drivers/SelectedDriverDetail";
 import ConstructorSelector from "../components/Constructors/ConstructorSelector";
 import SelectConstructorDetail from "../components/Constructors/SelectedConstructorDetails";
 import DriverSearch from "../components/Drivers/DriverSearchold";
+import SearchDriverDetail from "../components/Drivers/SearchDriverDetail";
 
 
 
@@ -15,7 +16,7 @@ function F1Container() {
 
     const [drivers, setDrivers] = useState([]);
     const [selectedDriver, setSelectedDriver] = useState(null);
-    const [search, setSearch] = useState("")
+    const [searchedDriver, setSearchedDriver] = useState("")
     const [constructors, setConstructors] = useState([]);
     const [selectedConstructor, setSelectedConstructor] = useState([]);
     const [circuits, setCircuits] = useState([])
@@ -66,43 +67,39 @@ function F1Container() {
         setSelectedConstructor(constructor);
     }
 
+    const onSearchedDriver = function (searchedDriver) {
+        setSearchedDriver(searchedDriver);
+    }
+
     return (
-        <body>
-            <h1>F1 Season Insights 2022</h1>
-            <main>
-                <section>
-                    <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
-                    {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
+        <main>
+            <h2>F1 2022 Drivers/Constructors</h2>
+            <section>
+                <DriverSelector drivers={drivers} onDriverSelected={onDriverSelected} />
+                {selectedDriver ? <SelectDriverDetail selectedDriver={selectedDriver} /> : null}
 
-                    <ConstructorSelector constructors={constructors} onConstructorSelected={onConstructorSelected} />
-                    {selectedConstructor ? <SelectConstructorDetail selectedConstructor={selectedConstructor} /> : null}
-                </section>
+                <ConstructorSelector constructors={constructors} onConstructorSelected={onConstructorSelected} />
+                {selectedConstructor ? <SelectConstructorDetail selectedConstructor={selectedConstructor} /> : null}
+            </section>
 
-                <div>
-                    <DriverSearch drivers={drivers} search={search} />
-                    <input placeholder="Search Driver" onChange={event => setSearch(event.target.value)} />
-
-
-
-
-
+            <section>
+                <DriverSearch drivers={drivers} onSearchedDriver={onSearchedDriver} />
+                {/* {searchedDriver ? <SearchDriverDetail searchedDriver={searchedDriver} /> : null} */}
+            </section>
+            <section>
+                <div >
+                    <DriverList drivers={drivers} />
                 </div>
 
-                <section>
-                    <div >
-                        <p> <DriverList drivers={drivers} /></p>
-                    </div>
+                <ConstructorsList constructors={constructors} />
+            </section>
 
-                    <ConstructorsList constructors={constructors} />
-                </section>
+            <section>
+                <li><CircuitsList circuits={circuits} /></li>
 
-                <section>
-                    <li><CircuitsList circuits={circuits} /></li>
+            </section>
 
-                </section>
-
-            </main >
-        </body>
+        </main >
 
     )
 }
